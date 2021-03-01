@@ -24,7 +24,8 @@
         constructor(props){
           super(props)
           this.state = {
-            hand: []
+            //there is no starting hand. I tried to add the same math.floor to give random card and ised
+            hand: [ {drawCard} ]
           }
         }
 
@@ -60,7 +61,11 @@
       }
 
       class Card extends React.Component{
-        render(){
+
+  //the props are not being passed so I added this constructor and super to try to pass the props through these classes too... still could not get it to work 
+        constructor(props){
+          super(props);
+        render()
           let handStyles = {
             display: "flex",
             flexDirection: "row",
@@ -74,8 +79,11 @@
             padding: "10px"
           }
           return(
+            //there needs to be a class in the currly brackets on line 81 after on click i put hand as a place holder as I tried the rest of the classes and still could not make it work
             <>
-              <button onClick={}>
+
+         
+              <button onClick={ hand }>
                 Click to Draw a Card
               </button>
               <button onClick={ shuffle }>
